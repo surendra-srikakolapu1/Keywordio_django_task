@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags %}
+{% block title %}Create Book{% endblock %}
+
+{% block content %}
+
+<div class="content">
+
+
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-4 col-xl-4 col-md-4 col-sm-8 col-xs-8 text-light mt-4 box-register">
+
+            <center>
+                <h2 class="heading">LOGIN</h2>
+            </center>
+
+
+            <form class="p-2" method="POST">
+
+
+
+                <div id="div_id_username" class="form-group m-3">
+                    <div>
+                        <input type="text" name="username" maxlength="150" class="textinput textInput form-control"
+                            required placeholder="Enter Email" id="id_username">
+                    </div>
+                </div>
+                <div id="div_id_password" class="form-group m-3">
+                    <div>
+                        <input type="password" name="password" autocomplete="current-password"
+                            class="textinput textInput form-control" placeholder="Enter Password" required
+                            id="id_password">
+                    </div>
+                </div><br>
+
+                <div style="position:relative;margin-left:8%;" class="col-10">
+                    <input class="btn form-control text-light  btn-danger btn-md mb-4 text-uppercase" type="submit">
+                </div>
+                {% csrf_token %}
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

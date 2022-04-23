@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<section id="home" class="intro-section">
+    <div class="container">
+        <div class="row align-items-center text-white">
+
+            <div class="col-md-6 intros text-start">
+                <h1 class="display-2">
+                    <span class="display-2--intro">Hey!, I'm Surendra</span>
+                    <span class="display-2--description lh-base">
+                        Currently looking for python/django position .
+                    </span>
+                </h1>
+                {% for file in files %}
+
+                <a href="{{file.file_upload.url}}" download="{{file.file_upload.url}}">
+                    <button type="button" class="rounded-pill btn-rounded">Download CV
+                    </button></a>
+
+
+                {% endfor %}
+            </div>
+
+            <div class=" col-md-6 intros text-end">
+
+            </div>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1"
+            d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
+</section>
+
+{% for file in files %}
+
+{% endfor %}
+
+
+{% endblock %}

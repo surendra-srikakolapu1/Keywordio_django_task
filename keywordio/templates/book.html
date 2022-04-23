@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.name }}{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
+        <div class="images col-xl-6 col-lg-6 col-md-6 col-sm-12 com-xs-12 ">
+            <img class="rounded-xl" width="60%" height="60%" src="{{ book.image.url }}">
+            <br>
+
+            <h1 class="text-2xl text-light badge bg-danger">{{ book.name }}</h1>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 com-xs-12">
+            <label class=" badge bg-danger">BOOK NAME</label>
+            <h1 class="text-4xl text-light">{{ book.name }}</h1><br><br>
+
+            <label class=" badge bg-danger">CATEGORY</label>
+            <h2 class="text-4xl text-light">{{ book.category }}</h2><br><br>
+
+            <label class=" badge bg-danger">AUTHOR</label>
+            <h2 class="text-4xl text-light">{{ book.author }}</h2><br><br>
+
+            <label class=" badge bg-danger">DESCRIPTION</label>
+            {% if book.description %}
+            <p class=" mt-6 text-light">
+                {{ book.description }}
+            </p>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

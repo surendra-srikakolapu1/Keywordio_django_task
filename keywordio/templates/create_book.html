@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags %}
+{% block title %}Create Book{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
+            <form method="POST" enctype="multipart/form-data">
+
+
+                <div class="row text-light text-center  mb-3 ">
+                    <label
+                        style=" font-family: Tahoma; font-size: 30px; font-style: oblique; font-variant: normal; font-weight: bold; letter-spacing: 15px;">ADD
+                        BOOK</label>
+                </div>
+
+                <div class="row text-light">
+                    <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 pt-4">
+                        {{form.category|as_crispy_field}}
+                        <br>
+                        {{form.name|as_crispy_field}}
+                        <br>
+                        {{form.author|as_crispy_field}}
+                        <br>
+                        {{form.slug|as_crispy_field}}
+                    </div>
+
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 pt-4">
+                        {{form.description|as_crispy_field}}
+                        <br>
+                        {{form.image|as_crispy_field}}
+                    </div>
+                </div>
+
+
+
+                <br>
+                <div class="row pt-4 justify-content-center">
+                    <input class="col-11 btn btn-danger" type="submit" value="Submit">
+                </div>
+
+                {% csrf_token %}
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
